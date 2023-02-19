@@ -1,4 +1,4 @@
-﻿class StateSaver : IState
+﻿class StateSaver
 {
     //this class is meant to help change the states to one another
     // and get the current state
@@ -15,14 +15,6 @@
     public IState GetState()
     {
         return _state;
-    }
-    public void Display()
-    {
-
-    }
-    public string GetCommand()
-    {
-        return "";
     }
 
 }

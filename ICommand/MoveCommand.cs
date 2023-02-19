@@ -2,7 +2,6 @@
 {
     private StateSaver _currentState;
 
-    private IState state;
     public MoveCommand(StateSaver currentState)
     {
         _currentState = currentState;

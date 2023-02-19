@@ -12,7 +12,7 @@ public class GameEngine
     private RedRoom redRoom = new RedRoom("room1");
     private BlueRoom blueRoom = new BlueRoom("room2");
     private Hall hall = new Hall("room0");
-
+    private bool _gameOver = false;
     private StateSaver _stateSaver = new StateSaver();
 
     public GameEngine()
@@ -26,17 +26,22 @@ public class GameEngine
     {
         while (true)
         {
+            GameOver();
+            if (_gameOver)
+                break;
             _state = _stateSaver.GetState();
             _stateSaver.ChangeState(_state);
             _state.Display();
             _input = _state.GetCommand();
             _command = GetCommand(_input);
             _command.Execute();
+            
         }
     }
     internal GameEngine saveEnginn() 
     //to return the current states of game in order to save
     {
+        
         GameEngine savGameEngine = new GameEngine();
         savGameEngine.player = player;
         savGameEngine._state = _state;
@@ -176,7 +181,15 @@ public class GameEngine
     {
         if (redRoom._inventory.Count > 0 && blueRoom._inventory.Count > 0)
         {
-            
+            if (redRoom._inventory[0] is RedBall&& blueRoom._inventory[0] is BlueBall)
+            {
+                _gameOver = true;
+                Console.WriteLine("***************************************************************");
+                Console.WriteLine("**********************!!!YOUWON!!!*****************************");
+                Console.WriteLine("***************************************************************");
+                
+
+            }
         }
         
 

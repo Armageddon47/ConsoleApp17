@@ -5,5 +5,8 @@
     public RedRoom(string _name) : base(_name)
     {
         _inventory.Add(new BlueBall());
+       
+
     }
+    
 }
