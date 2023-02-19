@@ -1,7 +1,7 @@
 ﻿class Room
 {
     //every room has inventory to hold the game objects
-
+    public bool WinState = false;
     internal List<IGameObject> _inventory = new List<IGameObject>();
     private string _name;
     public Room( string name)

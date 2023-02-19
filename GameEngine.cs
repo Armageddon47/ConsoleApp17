@@ -172,4 +172,13 @@ public class GameEngine
         }
 
     }
+    void GameOver()
+    {
+        if (redRoom._inventory.Count > 0 && blueRoom._inventory.Count > 0)
+        {
+            
+        }
+        
+
+    }
 }

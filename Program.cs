@@ -7,6 +7,7 @@ class Program
 {
     static void Main()
     {
+        Console.WriteLine("move red ball to redroom and blue ball to blueroom in order to win");
         var start = new GameEngine();
         start.Run();
     }
